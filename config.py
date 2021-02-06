@@ -8,18 +8,24 @@ Configure your preferences here for:
 '''
 
 # TWITTER DEVELOPER KEYS HERE
-consumer_key = '...',
+consumer_key = '...'
 consumer_secret = '...'
 access_token = '...'
 access_token_secret = '...'
 
-# CELEBRITY OF CHOICE
-CELEBRITY = 'Elon Musk'
+# CELEBRITY ID
+#
+# 1) Visit https://tweeterid.com/
+# 2) Type in handle to get ID
+CELEBRITY_ID = 99999999
+
+# EMAIL SENDER
+SENDER_EMAIL = 'example@gmail.com'
+SENDER_PASSWORD = '...'
 
 # EMAIL RECIPIENTS
 EMAIL_RECIPIENTS = [
     'example@gmail.com',
-    'johnnyappleseed@gmail.com',
+    'example2@gmail.com',
     '...',
 ]
-# MAKE SURE TO TURN ON 'LESS SECURE ACCESS' FOR GMAIL ACCOUNTS
