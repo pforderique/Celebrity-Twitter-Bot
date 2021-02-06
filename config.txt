@@ -1,0 +1,35 @@
+'''
+Configuration File
+
+Configure your preferences here for:
+    Twitter account keys and token
+    celebrity
+    email recipients
+
+COPY CONTENTS OF THIS FILE TO config.py 
+'''
+
+# TWITTER DEVELOPER KEYS HERE
+consumer_key = '...'
+consumer_secret = '...'
+access_token = '...'
+access_token_secret = '...'
+
+# CELEBRITY HANDLES (without the '@' symbol)
+CELEBRITY_HANDLES = [
+    'elonmusk',
+    'taylorswift',
+]
+
+# EMAIL SENDER
+# NOTE: 
+#   May have to turn on "Less Secure Access" for gmail
+SENDER_EMAIL = 'example@gmail.com'
+SENDER_PASSWORD = '...'
+
+# EMAIL RECIPIENTS
+EMAIL_RECIPIENTS = [
+    'example@gmail.com',
+    'example2@gmail.com',
+    '...',
+]
