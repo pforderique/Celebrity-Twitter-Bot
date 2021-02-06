@@ -35,12 +35,27 @@ def email_tweet(tweet:CelebrityTweet) -> None:
 
         smtp.sendmail(SENDER_EMAIL, EMAIL_RECIPIENTS, msg)
 
+# only email it if it was from creator himself
+def from_creator(status):
+    if hasattr(status, 'retweeted_status'):
+        return False
+    elif status.in_reply_to_status_id != None:
+        return False
+    elif status.in_reply_to_screen_name != None:
+        return False
+    elif status.in_reply_to_user_id != None:
+        return False
+    else:
+        return True
+
 # override tweepy.StreamListener to send email when status updated
 class CelebrityStreamListener(StreamListener):
 
     def on_status(self, status):
-        ct = CelebrityTweet(status)
-        email_tweet(ct)
+        if from_creator(status):
+            ct = CelebrityTweet(status)
+            email_tweet(ct)
+            print(ct.tweet) # for debugging
 
 # starts the user stream for specified celebrities
 def start_stream():
